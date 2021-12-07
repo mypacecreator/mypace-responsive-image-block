@@ -6,8 +6,16 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-mypace-responsive-image-block {
-  border: 1px dotted #f00;
+.mypace-responsive-image {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border: 1px dotted #f0c;
+}
+
+.mypace-responsive-image__pc,
+.mypace-responsive-image__sp {
+  padding: 20px;
 }
 
 /*# sourceMappingURL=index.css.map*/

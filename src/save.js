@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+//import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+//import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -22,13 +22,21 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+const Save = ( { attributes: { PCMediaURL, PCMediaALT, SPMediaURL } } ) => {
 	return (
-		<p {...useBlockProps.save()}>
-			{__(
-				'Mypace Responsive Image Block – hello from the saved content!',
-				'mypace-responsive-image-block'
-			)}
-		</p>
+		<div className="wp-block-image">
+			<figure className="wp-block-satori-recruit-responsive-image_figure">
+				<picture>
+					<source
+						media="not all and (min-width: 768px)"
+						srcSet={ SPMediaURL }
+					/>
+					<source media="(min-width: 768px)" srcSet={ PCMediaURL } />
+					<img src={ PCMediaURL } alt={ PCMediaALT } />
+				</picture>
+			</figure>
+		</div>
 	);
-}
+};
+export default Save;
+
