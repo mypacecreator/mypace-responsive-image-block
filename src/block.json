@@ -1,0 +1,37 @@
+{
+  "name": "mypace/responsive-image",
+  "title": "レスポンシブ画像",
+  "category": "media",
+  "icon": "format-image",
+  "description": "PC用、SP用に別々の画像をアップロードできるブロック",
+  "textdomain": "mypace",
+  "supports": {
+	"align": [ "left", "center", "right", "wide", "full" ]
+  },
+  "attributes": {
+	"PCMediaID": {
+	  "type": "number"
+	},
+	"PCMediaURL": {
+	  "type": "string",
+	  "source": "attribute",
+	  "selector": "img",
+	  "attribute": "src"
+	},
+	"PCMediaALT": {
+	  "type": "string",
+	  "source": "attribute",
+	  "selector": "img",
+	  "attribute": "alt"
+	},
+	"SPMediaID": {
+	  "type": "number"
+	},
+	"SPMediaURL": {
+	  "type": "string",
+	  "source": "attribute",
+	  "selector": "source",
+	  "attribute": "srcset"
+	}
+  }
+}
