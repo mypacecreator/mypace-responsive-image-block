@@ -29,7 +29,7 @@ const { name } = metadata;
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( name, {
+registerBlockType(name, {
 	...metadata,
 	/**
 	 * @see ./edit.js

@@ -22,21 +22,20 @@
  *
  * @return {WPElement} Element to render.
  */
-const Save = ( { attributes: { PCMediaURL, PCMediaALT, SPMediaURL } } ) => {
+const Save = ({ attributes: { PCMediaURL, PCMediaALT, SPMediaURL } }) => {
 	return (
 		<div className="wp-block-image">
 			<figure className="wp-block-satori-recruit-responsive-image_figure">
 				<picture>
+					<source media="(max-width: 768px)" srcSet={SPMediaURL} />
 					<source
-						media="not all and (min-width: 768px)"
-						srcSet={ SPMediaURL }
+						media="not all and (max-width: 768px)"
+						srcSet={PCMediaURL}
 					/>
-					<source media="(min-width: 768px)" srcSet={ PCMediaURL } />
-					<img src={ PCMediaURL } alt={ PCMediaALT } />
+					<img src={PCMediaURL} alt={PCMediaALT} />
 				</picture>
 			</figure>
 		</div>
 	);
 };
 export default Save;
-

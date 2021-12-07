@@ -11,8 +11,8 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import {MediaUpload, MediaUploadCheck} from '@wordpress/block-editor';
-import {Button} from '@wordpress/components';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,10 +31,10 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 const Edit = ({
-		className,
-		attributes: {PCMediaID, PCMediaURL, PCMediaALT, SPMediaID, SPMediaURL},
-		setAttributes,
-	}) => {
+	className,
+	attributes: { PCMediaID, PCMediaURL, PCMediaALT, SPMediaID, SPMediaURL },
+	setAttributes,
+}) => {
 	const newClassName = `${className} mypace-responsive-image`;
 	const onSelectPCImage = (PCmedia) => {
 		setAttributes({
@@ -73,7 +73,7 @@ const Edit = ({
 						tabIndex="0"
 						aria-hidden
 					>
-						<img src={PCMediaURL} alt={PCMediaALT}/>
+						<img src={PCMediaURL} alt={PCMediaALT} />
 					</div>
 					<Button
 						onClick={removePCMedia}
@@ -105,7 +105,7 @@ const Edit = ({
 						tabIndex="0"
 						aria-hidden
 					>
-						<img src={SPMediaURL} alt=""/>
+						<img src={SPMediaURL} alt="" />
 					</div>
 					<Button
 						onClick={removeSPMedia}
@@ -135,7 +135,7 @@ const Edit = ({
 						onSelect={onSelectPCImage}
 						allowedTypes="image"
 						value={PCMediaID}
-						render={({open}) => getPCImageButton(open)}
+						render={({ open }) => getPCImageButton(open)}
 					/>
 				</MediaUploadCheck>
 			</div>
@@ -145,7 +145,7 @@ const Edit = ({
 						onSelect={onSelectSPImage}
 						allowedTypes="image"
 						value={SPMediaID}
-						render={({open}) => getSPImageButton(open)}
+						render={({ open }) => getSPImageButton(open)}
 					/>
 				</MediaUploadCheck>
 			</div>
@@ -154,4 +154,3 @@ const Edit = ({
 };
 
 export default Edit;
-
