@@ -1,17 +1,49 @@
 {
-	"$schema": "https://json.schemastore.org/block.json",
-	"apiVersion": 2,
-	"name": "create-block/mypace-responsive-image-block",
-	"version": "0.1.0",
-	"title": "Mypace Responsive Image Block",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"supports": {
-		"html": false
-	},
-	"textdomain": "mypace-responsive-image-block",
-	"editorScript": "file:./build/index.js",
-	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+  "$schema": "https://json.schemastore.org/block.json",
+  "apiVersion": 2,
+  "name": "mypace/responsive-image",
+  "title": "レスポンシブ画像",
+  "version": "0.1.0",
+  "category": "media",
+  "icon": "format-image",
+  "description": "PC用、SP用に別々の画像をアップロードできるブロック",
+  "textdomain": "mypace",
+  "supports": {
+    "align": [
+      "left",
+      "center",
+      "right",
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "PCMediaID": {
+      "type": "number"
+    },
+    "PCMediaURL": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src"
+    },
+    "PCMediaALT": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "alt"
+    },
+    "SPMediaID": {
+      "type": "number"
+    },
+    "SPMediaURL": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "source",
+      "attribute": "srcset"
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
 }

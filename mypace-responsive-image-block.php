@@ -20,7 +20,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/writing-your-first-block-type/
  */
-function create_block_mypace_responsive_image_block_block_init() {
+function mypace_responsive_image_block_init() {
 	register_block_type( __DIR__ );
 }
-add_action( 'init', 'create_block_mypace_responsive_image_block_block_init' );
+add_action( 'init', 'mypace_responsive_image_block_init' );
