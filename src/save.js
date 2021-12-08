@@ -24,8 +24,8 @@
  */
 const Save = ({ attributes: { PCMediaURL, PCMediaALT, SPMediaURL } }) => {
 	return (
-		<div className="wp-block-image">
-			<figure className="wp-block-satori-recruit-responsive-image_figure">
+		<div className="wp-block-image mypace-responsive-image">
+			<figure className="mypace-responsive-image__figure">
 				<picture>
 					<source media="(max-width: 768px)" srcSet={SPMediaURL} />
 					<source
